@@ -22,22 +22,16 @@ class Auto {
                 int avanzar = rand() % 10 + 1;
                 distancia_recorrida += avanzar;
 
-                if (distancia_recorrida > distancia_total)
-                {
-                    distancia_recorrida = distancia_total;
-                }
-
+                if (distancia_recorrida < distancia_total)
                 {
                     std::lock_guard<std::mutex> lock(mtx);
-                    std::cout << nombre << "recorre" << "metros (total recorrido: " << distancia_recorrida << "metros)" << std::endl;
+                    std::cout << nombre << " recorre " << avanzar << " metros (total recorrido: " << distancia_recorrida << " metros)" << std::endl;                    
+                } else {
+                    std::lock_guard<std::mutex> lock(mtx);
+                    std::cout << "\033[1;32m" << nombre << " recorre " << avanzar << " metros y termina en " << posicion++ << " posicion!!" << "!\033[0m" << std::endl;
                 }
 
                 std::this_thread::sleep_for(std::chrono::milliseconds(rand() % 500 + 100));
-
-                {
-                    std::lock_guard<std::mutex> lock(mtx);
-                    std::cout << nombre << "termino en " << posicion++ << "posicion!!" << std::endl; 
-                }
             }
         
         }
