@@ -1,5 +1,7 @@
 # Tarea1SSOO
 Sistemas operativos 2024 UBB
+Matias Pereira
+Christian Chandia
 # README - Instrucciones para Compilar y Ejecutar
 
 ## Descripción
