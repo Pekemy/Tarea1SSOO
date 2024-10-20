@@ -30,7 +30,7 @@ g++ -std=c++11 -Wall -o carrera carrera.cpp
 ## ¿Cómo ejecutar el programa?
 Después de compilar, solo necesitas correr el siguiente comando:
 ```
-./carrera<metros><cantidad de autos>
+./carrera <metros><cantidad de autos>
 ```
 
 ## ¿Cómo limpiar los archivos generados?
